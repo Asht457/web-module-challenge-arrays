@@ -50,7 +50,7 @@ function copy(original){
   const cloneArray = original.slice();
   return cloneArray
 }
-console.log(copy(originalFlavors));
+// console.log(copy(originalFlavors));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -65,13 +65,13 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 
 function is31Flavors(flavors){
-  for(i = 0; i < flavors.length; i++) {
+  for(let i = 0; i < flavors.length; i++) {
     if(flavors.length === 31) {
       return true;
     } else return false;
   }
  }
- console.log(is31Flavors(originalFlavors));
+//  console.log(is31Flavors(originalFlavors));
 
 
 
@@ -88,10 +88,11 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(array, newFlavor){
+  array.unshift(newFlavor);
+  return array;
  }
-
+//  console.log(addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -106,10 +107,11 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
+ array.pop();
+ return array;
 }
-
+console.log(removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -124,9 +126,10 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, o){
+  return array[o];
 }
+console.log(getFlavorByIndex(originalFlavors, 2));
 
 
 
@@ -144,10 +147,12 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, flavor){
+  const index = array.indexOf(flavor);
+  array.splice(index, 1);
+  return array;
 }
-
+console.log(removeFlavorByName(originalFlavors, 'Rocky Road'))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -169,10 +174,17 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, word){
+  const filtered = [];
+ for(let i = 0; i < array.length; i++) {
+  if(array[i].includes(word)) {
+    filtered.push(array[i]);
+    
+  }
 }
-
+return filtered;
+}
+console.log(filterByWord(originalFlavors, 'Chocolate'));
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
